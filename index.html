@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eftiare Ahmed Rimon — Software Engineer</title>
+<meta name="description" content="Software engineer who supports enterprise capital-market software (Java, Oracle ADF, PL/SQL) and builds full-stack web apps (Next.js, Node.js, MySQL).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f2f4f8;--panel:#fff;--ink:#0a1a33;--muted:#546480;--line:#d5dbe6;--accent:#a85f00;--link:#1d4ed8;--navy:#0a1a33;--navy2:#06122a;--amber:#ffb020;--up:#2fbf71}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#08111f;--panel:#0f1c33;--ink:#e9eef7;--muted:#9aa8c2;--line:#22314d;--accent:#ffb020;--link:#8fb0ff}}
+:root[data-theme="dark"]{--bg:#08111f;--panel:#0f1c33;--ink:#e9eef7;--muted:#9aa8c2;--line:#22314d;--accent:#ffb020;--link:#8fb0ff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16.5px/1.65 "Instrument Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;margin:0;line-height:1}
+a{color:var(--link)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+.w{max-width:1100px;margin:0 auto;padding:0 28px}
+/* top bar + hero */
+.top{position:sticky;top:0;z-index:5;background:var(--navy);border-bottom:1px solid #1c2c4d}
+.top .w{display:flex;justify-content:space-between;align-items:center;height:60px}
+.mark{font:900 1.6rem "Big Shoulders Display",sans-serif;color:var(--amber);text-decoration:none;letter-spacing:.02em}
+.top nav{display:flex;gap:26px}
+.top nav a{color:#c9d5ea;text-decoration:none;font-size:.95rem;font-weight:500}
+.top nav a:hover{color:var(--amber)}
+.hero{background:var(--navy);color:#eaf0fb;padding:72px 0 88px}
+.hero .w{display:grid;grid-template-columns:1fr 250px;gap:56px;align-items:end}
+.hero h1{font-weight:900;font-size:clamp(64px,12.5vw,176px);letter-spacing:-.01em;line-height:.86;text-transform:uppercase}
+.hero h1 span{display:block;overflow:hidden}
+.hero h1 span i{display:block;font-style:normal;animation:rise .9s cubic-bezier(.2,.8,.2,1) both}
+.hero h1 span:nth-child(2) i{animation-delay:.12s;color:var(--amber)}
+@keyframes rise{from{transform:translateY(105%)}to{transform:none}}
+.hero p{font-size:1.3rem;line-height:1.5;max-width:34ch;margin:30px 0 30px;color:#c9d5ea}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:12px 22px;border:1.5px solid currentColor;border-radius:3px;color:inherit;text-decoration:none;font-weight:600;font-size:.98rem}
+.hero .btn{color:#eaf0fb}.hero .btn:hover{background:#eaf0fb;color:var(--navy)}
+.hero .btn.main{background:var(--amber);border-color:var(--amber);color:var(--navy)}
+.hero .btn.main:hover{filter:brightness(1.1)}
+.photo{width:250px;height:auto;aspect-ratio:197/239;object-fit:cover;border-radius:3px;box-shadow:12px 12px 0 var(--amber);display:block}
+/* ticker tape */
+.tape{background:var(--navy2);border-block:1px solid #1c2c4d;overflow:hidden;white-space:nowrap;color:#eaf0fb}
+.track{display:inline-flex;animation:tick 36s linear infinite}
+.tape:hover .track{animation-play-state:paused}
+.track b{font:700 1.15rem "Big Shoulders Display",sans-serif;letter-spacing:.06em;padding:16px 0}
+.track span{padding:0 44px;display:inline-flex;gap:12px;align-items:baseline}
+.track em{font-style:normal;color:var(--up);font-weight:700}
+.track u{text-decoration:none;color:#8fa0bf;font-size:.9rem;letter-spacing:.08em}
+@keyframes tick{to{transform:translateX(-50%)}}
+/* sections */
+.sec{padding:92px 0 0}
+h2{font-weight:900;font-size:clamp(40px,6vw,64px);text-transform:uppercase;margin-bottom:34px}
+.lead{font-size:clamp(1.35rem,2.6vw,1.9rem);line-height:1.45;max-width:30em;font-weight:500;margin:0}
+.lead+p{max-width:60ch;color:var(--muted);margin-top:22px}
+.row{display:grid;grid-template-columns:230px 1fr;gap:40px;padding:28px 0;border-top:1.5px solid var(--line)}
+.when{color:var(--muted);font-size:.95rem}.when b{display:block;color:var(--ink);font-size:1.05rem}
+.row h3{font-size:2rem;margin-bottom:4px}
+.co{color:var(--muted);margin:0 0 16px}
+ul{margin:0;padding-left:1.15rem}li{margin-bottom:10px;max-width:68ch}
+.tabs{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px}
+.tabs button{font:500 .95rem "Instrument Sans",sans-serif;background:none;color:var(--ink);border:1.5px solid var(--line);border-radius:99px;padding:7px 18px;cursor:pointer}
+.tabs button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.card{background:var(--panel);border:1.5px solid var(--line);border-radius:4px;padding:26px 28px}
+.card:hover{border-color:var(--accent)}
+.card.big{grid-column:1/-1;border-left:6px solid var(--amber)}
+.card[hidden]{display:none}
+.card h3{font-size:1.75rem;margin-bottom:10px}
+.card p{margin:0 0 16px;color:var(--muted);max-width:62ch}
+.tg{display:flex;flex-wrap:wrap;gap:6px}
+.tg span{font-size:.82rem;border:1px solid var(--line);border-radius:3px;padding:2px 9px}
+.sk{display:grid;grid-template-columns:repeat(2,1fr);gap:0 40px}
+.sk div{padding:20px 0;border-top:1.5px solid var(--line)}
+.sk h3{font-size:1.5rem;margin-bottom:6px}.sk p{margin:0;color:var(--muted)}
+.ed{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:16px 0;border-top:1.5px solid var(--line)}
+.ed b{font-weight:600}.ed span{color:var(--muted)}
+.contact{margin-top:92px;background:var(--navy);color:#eaf0fb;padding:80px 0}
+.contact h2{font-size:clamp(48px,9vw,120px);line-height:.9;margin-bottom:26px}
+.contact p{font-size:1.2rem;color:#c9d5ea;max-width:36ch;margin:0 0 28px}
+.contact .btn{color:#eaf0fb}.contact .btn:hover{background:#eaf0fb;color:var(--navy)}
+.contact .btn.main{background:var(--amber);border-color:var(--amber);color:var(--navy)}
+footer{background:var(--navy2);color:#8fa0bf;padding:20px 0;font-size:.9rem}
+@media(max-width:820px){
+.hero .w{grid-template-columns:1fr;gap:44px}.photo{width:190px;order:-1}
+.top nav{display:none}.row{grid-template-columns:1fr;gap:12px}
+.grid,.sk{grid-template-columns:1fr}.sec{padding-top:64px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.track{animation:none}.hero h1 span i{animation:none}}
+</style>
+</head>
+<body>
+<header class="top"><div class="w">
+<a class="mark" href="#top" aria-label="Eftiare Ahmed Rimon, top of page">EAR</a>
+<nav aria-label="Sections"><a href="#about">About</a><a href="#experience">Experience</a><a href="#work">Work</a><a href="#skills">Skills</a><a href="#contact">Contact</a></nav>
+</div></header>
+
+<section class="hero" id="top"><div class="w">
+<div>
+<h1><span><i>Eftiare</i></span><span><i>Ahmed Rimon</i></span></h1>
+<p>Software engineer. I keep financial systems running and build the web apps around them.</p>
+<div class="btns">
+<a class="btn main" href="https://github.com/EftiarRimon" target="_blank" rel="noopener">GitHub</a>
+<a class="btn" href="https://www.linkedin.com/in/eftiare-ahmed-rimon-673b12307/" target="_blank" rel="noopener">LinkedIn</a>
+<a class="btn" href="mailto:bsse1355@iit.du.ac.bd">Email me</a>
+</div>
+</div>
+<img class="photo" src="data:image/jpeg;base64,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" alt="Portrait of Eftiare Ahmed Rimon" width="250" height="303">
+</div></section>
+
+<div class="tape" role="img" aria-label="Key numbers: 5 production bugs resolved, 3 features shipped, 6 months in production support, 200+ portal users, 6 projects built, 3 tournaments won, 300+ event attendees">
+<div class="track" id="track">
+<span><b>PRODUCTION BUGS RESOLVED</b><em>▲ 5</em></span>
+<span><b>FEATURES SHIPPED</b><em>▲ 3</em></span>
+<span><b>MONTHS IN LIVE SUPPORT</b><em>▲ 6</em></span>
+<span><b>PORTAL USERS</b><em>▲ 200+</em></span>
+<span><b>PROJECTS BUILT</b><em>▲ 6</em></span>
+<span><b>TOURNAMENTS WON</b><em>▲ 3</em></span>
+<span><b>EVENT ATTENDEES MANAGED</b><em>▲ 300+</em></span>
+</div></div>
+
+<main class="w">
+<section class="sec" id="about">
+<h2>About</h2>
+<p class="lead">I work where software meets money: platforms for brokerages and portfolio managers, where a bad release is a real problem for real clients.</p>
+<p>I'm a Software Engineering graduate of the Institute of Information Technology, University of Dhaka. During my internship at LEADS Corporation I shipped features, fixed live bugs and supported deployments. Outside work I build full-stack apps, distributed systems and small AI experiments.</p>
+</section>
+
+<section class="sec" id="experience">
+<h2>Experience</h2>
+<div class="row">
+<div class="when"><b>Mar 2025 – Aug 2025</b>6 months, Dhaka</div>
+<div>
+<h3>Software Development Intern</h3>
+<p class="co">CAPITA (Capital Market Solution), LEADS Corporation Limited</p>
+<ul>
+<li>Delivered <b>3 new features and enhancements</b> for CAPITA, a platform used by brokerages and portfolio managers for investor onboarding (KYC), trade execution, settlement and compliance reporting. Built on Java, Oracle ADF and PL/SQL.</li>
+<li>Diagnosed and resolved <b>5 production bugs</b>: reproduced the issue, debugged Java and PL/SQL logic, deployed the fix and kept stakeholders updated.</li>
+<li>Gave live production support to financial-institution clients: environment deployments, release assistance and post-deployment troubleshooting to minimize downtime.</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section class="sec" id="work">
+<h2>Selected work</h2>
+<div class="tabs" role="group" aria-label="Filter projects">
+<button aria-pressed="true" data-f="all">All</button><button aria-pressed="false" data-f="web">Web apps</button><button aria-pressed="false" data-f="systems">Systems</button><button aria-pressed="false" data-f="ai">AI</button>
+</div>
+<div class="grid">
+<article class="card big" data-c="web"><h3>MIT Student Portal</h3>
+<p>A full-stack university portal for 200+ users, designed and built solo. Three role-based dashboards (student, teacher, admin), JWT login and password recovery, course management, enrollment verification, notices, payments and payslips, and result viewing.</p>
+<div class="tg"><span>Next.js</span><span>Node.js</span><span>Prisma</span><span>MySQL</span><span>JWT</span></div></article>
+<article class="card" data-c="ai"><h3>Text2Code</h3>
+<p>Natural language to Python code. Benchmarks three sequence-to-sequence models (Vanilla RNN, LSTM, BiLSTM with Bahdanau attention) on the CodeSearchNet Python dataset.</p>
+<div class="tg"><span>Python</span><span>LSTM</span><span>BiLSTM</span><span>HuggingFace</span></div></article>
+<article class="card" data-c="web systems"><h3>Monolith to Distributed</h3>
+<p>A Stack Overflow-style Q&amp;A platform, first built as a monolith and then migrated to a distributed architecture to scale better. Team project.</p>
+<div class="tg"><span>JavaScript</span><span>Node.js</span><span>Express</span></div></article>
+<article class="card" data-c="systems"><h3>Rate Limiter &amp; Load Balancer</h3>
+<p>A containerized system that shows rate limiting and load balancing across services in a fault-tolerant setup.</p>
+<div class="tg"><span>Node.js</span><span>Docker</span><span>MinIO</span><span>MySQL</span></div></article>
+<article class="card" data-c="web"><h3>Hostel Management System</h3>
+<p>A hostel accommodation platform with room allocation, authentication and profile management. Team project.</p>
+<div class="tg"><span>Node.js</span><span>Express</span><span>Bootstrap</span></div></article>
+<article class="card" data-c="ai"><h3>Wumpus World AI</h3>
+<p>An agent that reasons with propositional and first-order logic to find the gold while avoiding pits and the Wumpus. Team project.</p>
+<div class="tg"><span>Python</span><span>Propositional logic</span><span>First-order logic</span></div></article>
+</div>
+<p style="margin-top:22px">More on <a href="https://github.com/EftiarRimon" target="_blank" rel="noopener">GitHub</a>.</p>
+</section>
+
+<section class="sec" id="skills">
+<h2>Skills</h2>
+<div class="sk">
+<div><h3>Languages</h3><p>Java, C++, JavaScript, TypeScript, Python, PHP, PL/SQL</p></div>
+<div><h3>Front-end</h3><p>HTML, CSS, React, Next.js, Bootstrap, Tailwind CSS</p></div>
+<div><h3>Back-end</h3><p>Node.js, Express.js, Django, Oracle ADF, REST APIs, MySQL, MongoDB</p></div>
+<div><h3>Tools</h3><p>Git and GitHub, Docker, Nginx, Postman, JDeveloper</p></div>
+<div><h3>Support</h3><p>Production support, root-cause debugging, deployments and releases, stakeholder communication</p></div>
+</div>
+</section>
+
+<section class="sec" id="education">
+<h2>Education</h2>
+<div class="ed"><div><b>B.Sc. in Software Engineering</b><br><span>Institute of Information Technology, University of Dhaka</span></div><span>GPA 3.25 / 4.00</span></div>
+<div class="ed"><div><b>Higher Secondary Certificate</b><br><span>Dhaka College, Dhaka</span></div><span>GPA 4.75 / 5.00</span></div>
+<div class="ed"><div><b>Secondary School Certificate</b><br><span>Al-Helal Academy, Sonagazi, Feni</span></div><span>GPA 5.00 / 5.00</span></div>
+<p style="margin-top:22px;max-width:64ch">Beyond code: champion of the IIT Futsal, IIT Premier League Cricket and Short-Pitch Cricket tournaments, and organizer of the IIT Tour for 300+ attendees.</p>
+</section>
+</main>
+
+<section class="contact" id="contact"><div class="w">
+<h2>Let's work together</h2>
+<p>I'm open to software engineering and support roles. Email is the fastest way to reach me.</p>
+<div class="btns">
+<a class="btn main" href="mailto:bsse1355@iit.du.ac.bd">bsse1355@iit.du.ac.bd</a>
+<a class="btn" href="https://www.linkedin.com/in/eftiare-ahmed-rimon-673b12307/" target="_blank" rel="noopener">LinkedIn</a>
+<a class="btn" href="https://github.com/EftiarRimon" target="_blank" rel="noopener">GitHub</a>
+</div>
+</div></section>
+<footer><div class="w">© 2026 Eftiare Ahmed Rimon</div></footer>
+
+<script>
+var t=document.getElementById('track');t.innerHTML+=t.innerHTML;
+document.querySelectorAll('.tabs button').forEach(function(b){b.addEventListener('click',function(){
+document.querySelectorAll('.tabs button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});
+var f=b.dataset.f;document.querySelectorAll('.card').forEach(function(c){c.hidden=!(f==='all'||c.dataset.c.split(' ').indexOf(f)>-1)});
+})});
+</script>
+</body>
+</html>
