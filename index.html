@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -279,7 +279,7 @@ var t=document.getElementById('track');t.innerHTML+=t.innerHTML;
 var r=document.documentElement;
 try{var sv=localStorage.getItem('theme');if(sv)r.setAttribute('data-theme',sv)}catch(e){}
 document.getElementById('theme').onclick=function(){
-var d=r.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
+var d=r.getAttribute('data-theme')||'dark';
 var n=d==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem('theme',n)}catch(e){}};
 document.querySelectorAll('.tabs button').forEach(function(b){b.addEventListener('click',function(){
 document.querySelectorAll('.tabs button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});
