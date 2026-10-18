@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Eftiare Ahmed Rimon — Software Engineer</title>
-<meta name="description" content="Full-stack software engineer building web apps from database to deployment with Next.js, Node.js and MySQL, plus enterprise Java experience.">
+<title>Eftiare Ahmed Rimon — Full-Stack Software Engineer</title>
+<meta name="description" content="Eftiare Ahmed Rimon is a full-stack software engineer building reliable web products from database design to deployment.">
 <meta property="og:title" content="Eftiare Ahmed Rimon — Software Engineer">
 <meta property="og:description" content="Full-stack web apps from database to deployment.">
 <meta name="theme-color" content="#0a1a33">
@@ -50,7 +50,7 @@ a{color:var(--link)}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border:1.5px solid currentColor;border-radius:10px;color:inherit;text-decoration:none;font-weight:600;font-size:.95rem;transition:.2s}
 .btn:hover{transform:translateY(-2px)}
 .hero .btn{color:#eaf0fb}.hero .btn:hover{background:#ffffff14}
-.btn.main{background:var(--amber);border-color:var(--amber);color:var(--navy)!important}
+.btn.main{background:var(--amber);border-color:var(--amber);color:var(--navy)!important}.btn.muted{color:var(--muted);border-style:dashed;cursor:default;pointer-events:none}.project-note{margin-top:14px!important;font-size:.86rem!important;color:var(--muted)}
 .btn.main:hover{background:var(--amber)!important;box-shadow:0 8px 24px #ffb02055}
 .term{background:#050d1c;border:1px solid #22345a;border-radius:14px;box-shadow:0 30px 60px #0008,0 0 0 1px #ffffff08 inset;overflow:hidden}
 .term-h{display:flex;align-items:center;gap:7px;padding:12px 16px;background:#0b1830;border-bottom:1px solid #22345a}
@@ -143,23 +143,43 @@ h2:after{content:"";display:block;width:64px;height:4px;border-radius:4px;backgr
 .nav a:not(.cta){display:none}
 }
 @media(max-width:600px){.grid,.sk,.flow{grid-template-columns:1fr}.chip{display:none}.sec{padding-top:68px}.card{padding:22px}.term-b{font-size:.78rem}}
+/* Keep the portfolio focused on evidence rather than motion. */
+.track,.orb,.chip,.pill b,.cur{animation:none!important}
+.rv{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.track,.pill b,.cur{animation:none}.rv{opacity:1;transform:none;transition:none}}
+
+/* v2: evidence blocks, resume CTA, static stats bar */
+.tape{white-space:normal}.track{display:flex;flex-wrap:wrap;justify-content:center;width:100%}.track span{padding:12px 28px}
+.shot{grid-column:1/-1;margin:20px 0 0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--panel)}
+.shot img{display:block;width:100%;height:auto}
+.shot figcaption{font:500 .76rem "JetBrains Mono",monospace;color:var(--muted);padding:8px 12px;border-top:1px solid var(--line)}
+.diagram{grid-column:1/-1;margin:18px 0 0;border:1px solid var(--line);border-radius:12px;padding:12px;background:color-mix(in srgb,var(--ink) 3%,transparent);overflow-x:auto}
+.diagram svg{display:block;width:100%;min-width:520px;height:auto}
+.diagram figcaption{font:500 .76rem "JetBrains Mono",monospace;color:var(--muted);margin-top:8px}
+.dg rect{fill:var(--panel);stroke:var(--line);stroke-width:1.5}
+.dg .hl{stroke:var(--amber)}
+.dg text{fill:var(--ink);font:500 12px "JetBrains Mono",monospace;text-anchor:middle}
+.dg .sub{fill:var(--muted);font-size:10px}
+.dg .tag{fill:var(--accent);font-size:11px;text-anchor:start}
+.dg path{stroke:var(--muted);stroke-width:1.5;fill:none}
+.dg marker path{fill:var(--muted);stroke:none}
 </style>
 </head>
 <body>
 <div id="bar"></div>
 <header class="top"><div class="w">
 <a class="mark" href="#top" aria-label="Eftiare Ahmed Rimon, top of page">&lt;ear<i>/&gt;</i></a>
-<nav class="nav" aria-label="Sections"><a href="#about">About</a><a href="#experience">Experience</a><a href="#work">Work</a><a href="#skills">Skills</a><button id="theme" aria-label="Toggle light and dark theme">◐</button><a class="cta" href="#contact">Hire me</a></nav>
+<nav class="nav" aria-label="Sections"><a href="#work">Work</a><a href="#about">About</a><a href="#experience">Experience</a><a href="#skills">Skills</a><button id="theme" aria-label="Toggle light and dark theme">◐</button><a class="cta" href="#contact">Hire me</a></nav>
 </div></header>
 
 <section class="hero" id="top"><div class="orb"></div><div class="w">
 <div>
 <span class="pill"><b></b>Open to full-stack roles · Bangladesh &amp; remote</span>
 <h1>I build <em>full-stack</em> products, end to end.</h1>
-<p>Software engineer from Dhaka. I design, build and ship web apps from database to deployed UI with Next.js, Node.js and MySQL, backed by enterprise Java experience.</p>
+<p>Full-stack software engineer from Dhaka. I design, build and ship production-minded web products with Next.js, Node.js, MySQL and Java.</p>
 <div class="btns">
 <a class="btn main" href="#work">View my work</a>
+<a class="btn" href="resume/Eftiare-Ahmed-Rimon-Resume.pdf" download>Download resume (PDF)</a>
 <a class="btn" href="https://github.com/EftiarRimon" target="_blank" rel="noopener">GitHub</a>
 <a class="btn" href="https://www.linkedin.com/in/eftiare-ahmed-rimon-673b12307/" target="_blank" rel="noopener">LinkedIn</a>
 </div>
@@ -173,11 +193,79 @@ h2:after{content:"";display:block;width:64px;height:4px;border-radius:4px;backgr
 </div></div>
 
 <main class="w">
+<section class="sec rv" id="work">
+<div class="eyebrow">// selected projects</div>
+<h2>Five projects worth your time.</h2>
+<p class="lead">Each project shows the problem, the engineering decisions and the result.</p>
+<p class="project-note">Five projects, each linked to its source on GitHub. A live demo is shown only where one is actually deployed.</p>
+<div class="tabs" role="group" aria-label="Filter projects">
+<button aria-pressed="true" data-f="all">All</button><button aria-pressed="false" data-f="web">Web apps</button><button aria-pressed="false" data-f="systems">Systems</button><button aria-pressed="false" data-f="ai">AI</button>
+</div>
+<div class="grid">
+<article class="card proj big" data-c="web">
+<div><h3>Dhaka Tesla Pool <span class="new">FEATURED</span></h3>
+<p><b>Problem:</b> Help Tesla owners offer spare seats and let passengers split a daily commute fare. <b>Solution:</b> A bilingual ride-sharing flow with separate passenger and driver journeys.</p>
+<div class="tg"><span>Next.js</span><span>Node.js</span><span>MySQL</span><span>Role-based auth</span><span>Vercel</span><span>Role: full-stack engineer</span></div>
+<div class="links"><a class="btn main" href="https://dhaka-tesla-pool-jade.vercel.app" target="_blank" rel="noopener">Live demo ↗</a><a class="btn" href="https://github.com/EftiarRimon/dhaka-tesla-pool" target="_blank" rel="noopener">GitHub + README</a></div></div>
+<ul class="feat"><li>Separate sign-up for passengers and drivers</li><li>Seat booking with fare splitting</li><li>Cash payment flow with no platform fee</li><li>Bilingual English and Bangla interface</li></ul>
+<figure class="shot"><img src="assets/tesla-pool.png" alt="Dhaka Tesla Pool ride booking screen" loading="lazy" onerror="this.parentNode.remove()"><figcaption>Dhaka Tesla Pool — booking flow</figcaption></figure>
+</article>
+<article class="card proj" data-c="web"><h3>MIT Student Portal</h3>
+<p><b>Problem:</b> Replace fragmented university administration workflows. <b>Solution:</b> A role-based portal for 200+ users covering courses, enrollment, payments and results.</p>
+<div class="tg"><span>Next.js</span><span>Node.js</span><span>Prisma</span><span>MySQL</span><span>JWT</span><span>Role: solo developer</span></div>
+<figure class="shot"><img src="assets/mit-portal.png" alt="MIT Student Portal dashboard" loading="lazy" onerror="this.parentNode.remove()"><figcaption>MIT Student Portal — role-based dashboard</figcaption></figure>
+<div class="links"><span class="btn muted">Live demo unavailable</span><a class="btn" href="https://github.com/EftiarRimon/MIT-PORTAL" target="_blank" rel="noopener">GitHub + README</a></div></article>
+<article class="card proj" data-c="ai"><h3>Text2Code</h3>
+<p><b>Problem:</b> Convert natural-language descriptions into Python code. <b>Solution:</b> A comparative sequence-to-sequence study across Vanilla RNN, LSTM and BiLSTM models with Bahdanau attention.</p>
+<div class="tg"><span>Python</span><span>PyTorch</span><span>RNN</span><span>LSTM</span><span>CodeSearchNet</span><span>Role: ML researcher</span></div>
+<figure class="shot"><img src="assets/text2code-results.png" alt="Text2Code model comparison results" loading="lazy" onerror="this.parentNode.remove()"><figcaption>Text2Code — RNN vs LSTM vs BiLSTM results</figcaption></figure>
+<div class="links"><span class="btn muted">Live demo unavailable</span><a class="btn" href="https://github.com/EftiarRimon/Text2Code-Seq2Seq" target="_blank" rel="noopener">GitHub + README</a></div></article>
+<article class="card proj" data-c="systems"><h3>Rate Limiter &amp; Load Balancer</h3>
+<p><b>Problem:</b> Protect services and distribute traffic under load. <b>Solution:</b> A containerized fault-tolerant system combining rate limiting, load balancing, object storage and persistence.</p>
+<div class="tg"><span>Node.js</span><span>Docker</span><span>MinIO</span><span>MySQL</span><span>Role: systems engineer</span></div>
+<figure class="diagram"><svg class="dg" viewBox="0 0 660 120" role="img" aria-label="Request flow: client to rate limiter to load balancer to Node.js instances to MySQL and MinIO">
+<defs><marker id="ar1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z"/></marker></defs>
+<rect x="4" y="30" width="90" height="56" rx="10"/><text x="49" y="62">Client</text>
+<rect class="hl" x="140" y="30" width="110" height="56" rx="10"/><text x="195" y="56">Rate</text><text x="195" y="72">limiter</text>
+<rect class="hl" x="296" y="30" width="110" height="56" rx="10"/><text x="351" y="56">Load</text><text x="351" y="72">balancer</text>
+<rect x="452" y="6" width="90" height="34" rx="8"/><text x="497" y="28">Node.js</text>
+<rect x="452" y="46" width="90" height="34" rx="8"/><text x="497" y="68">Node.js</text>
+<rect x="452" y="86" width="90" height="28" rx="8"/><text x="497" y="105" class="sub">…N instances</text>
+<rect x="582" y="14" width="74" height="40" rx="8"/><text x="619" y="38">MySQL</text>
+<rect x="582" y="66" width="74" height="40" rx="8"/><text x="619" y="90">MinIO</text>
+<path d="M94 58H138" marker-end="url(#ar1)"/><path d="M250 58H294" marker-end="url(#ar1)"/>
+<path d="M406 58L450 23" marker-end="url(#ar1)"/><path d="M406 58L450 63" marker-end="url(#ar1)"/><path d="M406 58L450 98" marker-end="url(#ar1)"/>
+<path d="M542 28L580 34" marker-end="url(#ar1)"/><path d="M542 66L580 86" marker-end="url(#ar1)"/>
+</svg><figcaption>Simplified request flow · all components run as Docker containers</figcaption></figure>
+<div class="links"><span class="btn muted">Live demo unavailable</span><a class="btn" href="https://github.com/EftiarRimon?tab=repositories" target="_blank" rel="noopener">GitHub repositories</a></div></article>
+<article class="card proj" data-c="web systems"><h3>Monolith to Distributed</h3>
+<p><b>Problem:</b> Understand the trade-offs of scaling a Q&amp;A platform. <b>Solution:</b> Build the same Stack Overflow-style product as a monolith, then migrate it toward distributed services as a team.</p>
+<div class="tg"><span>JavaScript</span><span>Node.js</span><span>Express</span><span>Distributed systems</span><span>Role: team engineer</span></div>
+<figure class="diagram"><svg class="dg" viewBox="0 0 660 140" role="img" aria-label="Before: one monolith with one database. After: gateway in front of independent services">
+<defs><marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z"/></marker></defs>
+<text class="tag" x="4" y="16">BEFORE</text>
+<rect x="4" y="30" width="150" height="56" rx="10"/><text x="79" y="56">Monolith</text><text x="79" y="72" class="sub">web + API + logic</text>
+<rect x="4" y="100" width="150" height="34" rx="8"/><text x="79" y="122">Database</text>
+<path d="M79 86V98" marker-end="url(#ar2)"/>
+<path d="M190 70H260" marker-end="url(#ar2)"/><text x="225" y="62" class="sub">migrate</text>
+<text class="tag" x="290" y="16">AFTER</text>
+<rect class="hl" x="290" y="46" width="100" height="48" rx="10"/><text x="340" y="75">Gateway</text>
+<rect x="450" y="22" width="120" height="30" rx="8"/><text x="510" y="42">Service</text>
+<rect x="450" y="62" width="120" height="30" rx="8"/><text x="510" y="82">Service</text>
+<rect x="450" y="102" width="120" height="30" rx="8"/><text x="510" y="122">Service</text>
+<path d="M390 70L448 37" marker-end="url(#ar2)"/><path d="M390 70L448 77" marker-end="url(#ar2)"/><path d="M390 70L448 117" marker-end="url(#ar2)"/>
+<text x="615" y="82" class="sub">own data</text>
+</svg><figcaption>Simplified: same product built as a monolith first, then split into services</figcaption></figure>
+<div class="links"><span class="btn muted">Live demo unavailable</span><a class="btn" href="https://github.com/EftiarRimon?tab=repositories" target="_blank" rel="noopener">GitHub repositories</a></div></article>
+</div>
+<p class="project-note">More experiments are available on <a href="https://github.com/EftiarRimon" target="_blank" rel="noopener">GitHub</a>; they are kept out of the featured list so the strongest work stays easy to review.</p>
+</section>
+
 <section class="sec rv" id="about">
 <div class="ab"><div><div class="eyebrow">// about</div>
 <h2>Full-stack, end to end.</h2>
 <p class="lead">I take features from database schema to deployed interface, and care about every layer in between.</p>
-<p>I'm a Software Engineering graduate of the Institute of Information Technology, University of Dhaka. I've built and deployed full-stack products for real users, from a university portal with 200+ users to a ride-sharing platform, and worked on enterprise Java systems in industry. I also explore distributed systems and small AI experiments.</p>
+<p>I’m a software engineering graduate from the Institute of Information Technology, University of Dhaka. I build full-stack products that solve concrete user problems, from a 200+ user university portal to a ride-sharing platform. My work spans product development, enterprise Java systems and applied machine learning.</p>
 </div>
 <div class="term" aria-label="Animated terminal session"><div class="term-h"><i></i><i></i><i></i><span class="mono">~/rimon — zsh</span></div><div class="term-b mono" id="tb"></div></div></div>
 <div class="flow">
@@ -207,44 +295,6 @@ h2:after{content:"";display:block;width:64px;height:4px;border-radius:4px;backgr
 </div>
 </section>
 
-<section class="sec rv" id="work">
-<div class="eyebrow">// projects</div>
-<h2>Selected work.</h2>
-<div class="tabs" role="group" aria-label="Filter projects">
-<button aria-pressed="true" data-f="all">All</button><button aria-pressed="false" data-f="web">Web apps</button><button aria-pressed="false" data-f="systems">Systems</button><button aria-pressed="false" data-f="ai">AI</button>
-</div>
-<div class="grid">
-<article class="card proj big" data-c="web">
-<div><h3>Dhaka Tesla Pool <span class="new">NEW</span></h3>
-<p>A ride-sharing platform for Dhaka: Tesla owners offer seats, passengers book them and split the fare. Built to make a daily commute cheaper and a little less painful.</p>
-<div class="tg"><span>Full-stack</span><span>Role-based auth</span><span>Vercel</span></div>
-<div class="links"><a class="btn main" href="https://dhaka-tesla-pool-jade.vercel.app" target="_blank" rel="noopener">Live demo ↗</a><a class="btn" href="https://github.com/EftiarRimon/dhaka-tesla-pool" target="_blank" rel="noopener">Source code</a></div></div>
-<ul class="feat"><li>Separate sign-up for passengers and drivers</li><li>Seat booking with fare splitting</li><li>Pay by cash, free to join</li><li>Bilingual interface (English and Bangla)</li></ul>
-</article>
-<article class="card proj" data-c="web"><h3>MIT Student Portal</h3>
-<p>A full-stack university portal for 200+ users, designed and built solo. Student, teacher and admin dashboards, JWT login, course management, enrollment, payments and results.</p>
-<div class="tg"><span>Next.js</span><span>Node.js</span><span>Prisma</span><span>MySQL</span><span>JWT</span></div>
-<div class="links"><a class="btn" href="https://github.com/EftiarRimon/MIT-PORTAL" target="_blank" rel="noopener">Source code</a></div></article>
-<article class="card proj" data-c="ai"><h3>Text2Code</h3>
-<p>Natural language to Python. Benchmarks Vanilla RNN, LSTM and BiLSTM with Bahdanau attention on the CodeSearchNet Python dataset.</p>
-<div class="tg"><span>Python</span><span>LSTM</span><span>BiLSTM</span><span>HuggingFace</span></div>
-<div class="links"><a class="btn" href="https://github.com/EftiarRimon/Text2Code-Seq2Seq" target="_blank" rel="noopener">Source code</a></div></article>
-<article class="card proj" data-c="systems"><h3>Rate Limiter &amp; Load Balancer</h3>
-<p>A containerized, fault-tolerant system demonstrating rate limiting, load balancing, object storage and database integration.</p>
-<div class="tg"><span>Node.js</span><span>Docker</span><span>MinIO</span><span>MySQL</span></div></article>
-<article class="card proj" data-c="web systems"><h3>Monolith to Distributed</h3>
-<p>A Stack Overflow-style Q&amp;A platform, first built as a monolith, then migrated to a distributed architecture to scale. Team project.</p>
-<div class="tg"><span>JavaScript</span><span>Node.js</span><span>Express</span></div></article>
-<article class="card proj" data-c="web"><h3>Hostel Management System</h3>
-<p>Room allocation, authentication and profile management for hostel accommodation. Team project.</p>
-<div class="tg"><span>Node.js</span><span>Express</span><span>Bootstrap</span></div></article>
-<article class="card proj" data-c="ai"><h3>Wumpus World AI</h3>
-<p>An agent that reasons with propositional and first-order logic to find the gold while avoiding pits and the Wumpus.</p>
-<div class="tg"><span>Python</span><span>Propositional logic</span><span>FOL</span></div></article>
-</div>
-<p style="margin-top:24px;color:var(--muted)">More on <a href="https://github.com/EftiarRimon" target="_blank" rel="noopener">GitHub</a>.</p>
-</section>
-
 <section class="sec rv" id="skills">
 <div class="eyebrow">// toolbox</div>
 <h2>Skills.</h2>
@@ -265,9 +315,10 @@ h2:after{content:"";display:block;width:64px;height:4px;border-radius:4px;backgr
 <section class="contact" id="contact"><div class="w">
 <div class="eyebrow" style="color:var(--amber)">// contact</div>
 <h2>Let's build something great.</h2>
-<p>Open to full-stack and software engineering roles. Email is the fastest way to reach me.</p>
+<p>Open to full-stack and software engineering roles. Grab my resume below or email me for a project walkthrough.</p>
 <div class="btns">
 <a class="btn main" href="mailto:bsse1355@iit.du.ac.bd">bsse1355@iit.du.ac.bd</a>
+<a class="btn" href="resume/Eftiare-Ahmed-Rimon-Resume.pdf" download>Download resume (PDF)</a>
 <a class="btn" href="https://www.linkedin.com/in/eftiare-ahmed-rimon-673b12307/" target="_blank" rel="noopener">LinkedIn</a>
 <a class="btn" href="https://github.com/EftiarRimon" target="_blank" rel="noopener">GitHub</a>
 </div>
@@ -275,7 +326,6 @@ h2:after{content:"";display:block;width:64px;height:4px;border-radius:4px;backgr
 <footer><div class="w"><span>© 2026 Eftiare Ahmed Rimon</span><span class="mono">Dhaka, Bangladesh</span></div></footer>
 
 <script>
-var t=document.getElementById('track');t.innerHTML+=t.innerHTML;
 var r=document.documentElement;
 try{var sv=localStorage.getItem('theme');if(sv)r.setAttribute('data-theme',sv)}catch(e){}
 document.getElementById('theme').onclick=function(){
