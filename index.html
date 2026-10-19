@@ -302,7 +302,7 @@
     .live-indicator { display: inline-flex; align-items: center; gap: 7px; color: #c4f1d5; }
     .live-indicator i, .chip-pulse { width: 7px; height: 7px; display: inline-block; flex: none; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 5px rgba(143,228,179,.09); }
     .profile-photo-frame { position: relative; display: grid; place-items: center; min-height: 330px; overflow: hidden; border-radius: 20px; border: 1px solid rgba(255,255,255,.1); background: radial-gradient(circle at 50% 35%, rgba(118,229,239,.11), transparent 48%), linear-gradient(145deg, #17192a, #10121e); }
-    .profile-photo { display: block; width: min(78%, 290px); aspect-ratio: 1; object-fit: cover; object-position: center; border-radius: 50%; border: 6px solid rgba(255,255,255,.94); background: #fff; box-shadow: 0 14px 42px rgba(0,0,0,.35), 0 0 0 1px rgba(118,229,239,.32); }
+    .profile-photo { display: block; width: min(78%, 290px); height: 290px; aspect-ratio: 1 / 1; object-fit: cover; object-position: center 35%; flex: 0 0 auto; border-radius: 50%; border: 6px solid rgba(255,255,255,.94); background: #fff; box-shadow: 0 14px 42px rgba(0,0,0,.35), 0 0 0 1px rgba(118,229,239,.32); }
     .photo-corner { position: absolute; width: 22px; height: 22px; border-color: var(--cyan); opacity: .9; }
     .corner-tl { top: 16px; left: 16px; border-top: 1px solid; border-left: 1px solid; }
     .corner-br { bottom: 16px; right: 16px; border-bottom: 1px solid; border-right: 1px solid; }
@@ -340,7 +340,7 @@
       .hero-art { width: min(100%, 500px); margin-inline: auto; padding: 12px 8px 28px; }
       .profile-card { width: min(100%, 360px); border-radius: 24px; }
       .profile-photo-frame { min-height: 285px; }
-      .profile-photo { width: min(76%, 245px); }
+      .profile-photo { width: min(76%, 245px); height: 245px; }
       .profile-card-top { font-size: .58rem; }
       .float-chip { font-size: .65rem; }
       .float-chip.top-chip { top: -1px; right: -1px; }
