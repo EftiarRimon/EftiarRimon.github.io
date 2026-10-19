@@ -355,10 +355,10 @@
 
     .hero-focus { margin: -12px 0 14px; color: var(--cyan); font: 500 .79rem "DM Mono", monospace; letter-spacing: .015em; }
     .stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .project-meta-note { display: inline-block; color: var(--muted-2); font: .72rem "DM Mono", monospace; line-height: 1.5; }
     .project-result, .project-learning { margin: 12px 0 0; color: var(--muted); font-size: .82rem; line-height: 1.6; }
     .project-result strong { color: var(--cyan); }
     .project-learning strong { color: var(--purple); }
-    .project-link-placeholder { display: inline-block; color: var(--muted-2); font: .72rem "DM Mono", monospace; line-height: 1.5; }
     .architecture { width: 100%; padding: 18px; border: 1px solid var(--line); border-radius: 17px; background: rgba(8,10,18,.42); }
     .architecture-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
     .architecture-heading h4 { margin: 0; font: 600 1rem "Space Grotesk", sans-serif; }
@@ -455,17 +455,17 @@
               <div class="project-kicker"><i></i> Systems engineering · 01</div>
               <h3>Rate Limiter &amp; Load Balancer</h3>
               <p>A containerized, fault-tolerant system combining rate limiting, load balancing, object storage, and persistence to protect services under load.</p>
-              <p class="project-result"><strong>Key result:</strong> [TODO: Add measured requests/second, p95 latency, and load-test conditions]</p>
-              <p class="project-learning"><strong>What I learned / would improve:</strong> [TODO: Summarize what you learned about rate-limit policy, backpressure, and failure handling]</p>
+              <p class="project-result"><strong>Key result:</strong> Combines request throttling and traffic distribution with MySQL persistence and MinIO object storage.</p>
+              <p class="project-learning"><strong>What I learned / would improve:</strong> What I learned / would improve: Rate limits need explicit policies and predictable overload behavior; I would add load tests and failure-injection tests before making resilience claims.</p>
               <div class="tags"><span>Node.js</span><span>Docker</span><span>MinIO</span><span>MySQL</span></div>
-              <div class="project-meta"><span>Role · Systems engineer</span><span class="project-link-placeholder">[TODO: Add direct Rate Limiter &amp; Load Balancer repository URL]</span></div>
+              <div class="project-meta"><span>Role · Systems engineer</span><span class="project-meta-note">Source repository link is not available in the current project details.</span></div>
             </div>
             <div class="project-visual">
               <div class="architecture" aria-labelledby="rate-architecture-heading">
                 <div class="architecture-heading"><h4 id="rate-architecture-heading">Architecture at a glance</h4><span>Conceptual flow</span></div>
                 <svg viewBox="0 0 700 205" role="img" aria-labelledby="rate-arch-title rate-arch-desc" focusable="false">
                   <title id="rate-arch-title">Rate limiter and load balancer architecture</title>
-                  <desc id="rate-arch-desc">Requests flow from a client through an API gateway, rate limiter, and load balancer to service instances. The service layer connects to MySQL persistence and MinIO object storage. Verify the exact connections against the implementation.</desc>
+                  <desc id="rate-arch-desc">Requests flow from a client through an API gateway, rate limiter, and load balancer to service instances. The service layer connects to MySQL persistence and MinIO object storage. Conceptual overview of request routing and supporting storage based on the project description.</desc>
                   <defs><marker id="rate-arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#76e5ef"/></marker></defs>
                   <g fill="#171a2a" stroke="#454963" stroke-width="1.2">
                     <rect x="12" y="27" width="94" height="48" rx="10"/><rect x="130" y="27" width="108" height="48" rx="10"/>
@@ -486,7 +486,7 @@
                     <text x="618" y="157"><tspan x="618">MinIO object</tspan><tspan x="618" dy="14">storage</tspan></text>
                   </g>
                 </svg>
-                <p class="architecture-caption">[TODO: Verify this request flow and the storage connections against the implemented system before publishing.]</p>
+                <p class="architecture-caption">Conceptual architecture based on the project description.</p>
               </div>
             </div>
           
@@ -497,8 +497,8 @@
               <div class="project-kicker"><i></i> Full-stack product · 02</div>
               <h3>Dhaka Tesla Pool</h3>
               <p><b>The problem:</b> Help Tesla owners share spare seats and let passengers split daily commute fares. <b>The solution:</b> A bilingual ride-sharing flow with separate passenger and driver journeys.</p>
-              <p class="project-result"><strong>Key result:</strong> [TODO: Add verified concurrent-booking test result or booking throughput]</p>
-              <p class="project-learning"><strong>What I learned / would improve:</strong> [TODO: Summarize a lesson about booking consistency, concurrency, or driver/passenger flows]</p>
+              <p class="project-result"><strong>Key result:</strong> Provides separate passenger and driver journeys with seat booking and fare splitting in a bilingual interface.</p>
+              <p class="project-learning"><strong>What I learned / would improve:</strong> What I learned / would improve: Booking flows need clear state transitions and consistent seat availability; I would add concurrency tests and broader end-to-end coverage.</p>
               <div class="tags"><span>Next.js</span><span>Node.js</span><span>MySQL</span><span>Role-based auth</span><span>Vercel</span></div>
               <div class="project-links"><a class="btn btn-primary" href="https://dhaka-tesla-pool-jade.vercel.app" target="_blank" rel="noopener noreferrer">Live demo ↗</a><a class="btn" href="https://github.com/EftiarRimon/dhaka-tesla-pool" target="_blank" rel="noopener noreferrer">Source code ↗</a></div>
               <div class="tags" aria-label="Project features"><span>Seat booking</span><span>Fare splitting</span><span>Bangla + English</span><span>Passenger + driver flows</span></div>
@@ -519,8 +519,8 @@
               <div class="project-kicker"><i></i> Web application · 03</div>
               <h3>MIT Student Portal</h3>
               <p>A role-based university portal for 200+ users, bringing courses, enrollment, payments, and results into one workflow.</p>
-              <p class="project-result"><strong>Key result:</strong> Serves 200+ users; [TODO: Add verified response-time or test-coverage result]</p>
-              <p class="project-learning"><strong>What I learned / would improve:</strong> [TODO: Summarize a lesson about schema design, role-based access, or enrollment/payment workflows]</p>
+              <p class="project-result"><strong>Key result:</strong> Serves 200+ users through a shared workflow for courses, enrollment, payments, and results.</p>
+              <p class="project-learning"><strong>What I learned / would improve:</strong> What I learned / would improve: Role-based access needs server-side checks at each workflow boundary; I would strengthen automated integration tests for enrollment and payments.</p>
               <div class="tags"><span>Next.js</span><span>Node.js</span><span>Prisma</span><span>MySQL</span><span>JWT</span></div>
               <div class="project-meta"><span>Role · Solo developer</span><a href="https://github.com/EftiarRimon/MIT-PORTAL" target="_blank" rel="noopener noreferrer">Repository ↗</a></div>
             </div>
@@ -532,8 +532,8 @@
               <div class="project-kicker"><i></i> Architecture · 04</div>
               <h3>Monolith to Distributed</h3>
               <p>Explored the trade-offs of scaling a Stack Overflow-style Q&amp;A platform by building a monolith and then migrating toward distributed services as a team.</p>
-              <p class="project-result"><strong>Key result:</strong> [TODO: Add number of services extracted and a measured before/after latency or throughput result]</p>
-              <p class="project-learning"><strong>What I learned / would improve:</strong> [TODO: Describe one trade-off from separating services and what you would improve]</p>
+              <p class="project-result"><strong>Key result:</strong> Explores a migration path from a monolithic Q&amp;A application toward distributed services.</p>
+              <p class="project-learning"><strong>What I learned / would improve:</strong> What I learned / would improve: Distributed services add deployment and observability overhead; I would validate each service boundary with load tests and failure scenarios before splitting further.</p>
               <div class="tags"><span>JavaScript</span><span>Node.js</span><span>Express</span><span>Distributed systems</span></div>
               <div class="project-meta"><span>Role · Team engineer</span><a href="https://github.com/EftiarRimon/stackoverflow" target="_blank" rel="noopener noreferrer" aria-label="View source code for Monolith to Distributed on GitHub">Source code ↗</a></div>
             </div>
@@ -545,8 +545,8 @@
               <div class="project-kicker"><i></i> Applied machine learning · 05</div>
               <h3>Text2Code</h3>
               <p>A comparative sequence-to-sequence study converting natural-language descriptions into Python code, using attention-based recurrent models.</p>
-              <p class="project-result"><strong>Key result:</strong> [TODO: Add dataset size and measured exact-match accuracy for each model]</p>
-              <p class="project-learning"><strong>What I learned / would improve:</strong> [TODO: State what the model comparison taught you and the next experiment you would run]</p>
+              <p class="project-result"><strong>Key result:</strong> Compares attention-based recurrent sequence-to-sequence models for natural-language-to-Python code generation.</p>
+              <p class="project-learning"><strong>What I learned / would improve:</strong> What I learned / would improve: Exact-match scores alone do not show whether generated code works; I would add syntax checks and execution-based evaluation.</p>
               <div class="tags"><span>Python</span><span>PyTorch</span><span>RNN</span><span>LSTM</span><span>BiLSTM</span><span>Bahdanau attention</span></div>
               <div class="project-meta"><span>Role · ML researcher</span><a href="https://github.com/EftiarRimon/Text2Code-Seq2Seq" target="_blank" rel="noopener noreferrer">Repository ↗</a></div>
             </div>
