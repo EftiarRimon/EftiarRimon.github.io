@@ -1362,36 +1362,25 @@
       overflow: hidden;
       background: #05070d !important;
     }
+    .hero { background-image: none; }
     .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-      pointer-events: none;
       background-image:
-        linear-gradient(90deg, rgba(5,7,14,.94) 0%, rgba(5,7,14,.78) 38%, rgba(5,7,14,.35) 72%, rgba(5,7,14,.3) 100%),
-        linear-gradient(0deg, rgba(5,7,14,.96) 0%, rgba(5,7,14,.18) 48%, rgba(5,7,14,.26) 100%),
-        url("./assets/robot-hero.webp");
-      /* The source is a portfolio screenshot: zoom and shift to show the robot, not its baked-in text/nav. */
-      background-size: cover, cover, auto 170%;
-      /* Shift the oversized source left less so the robot head sits on the RIGHT,
-         leaving the introduction readable on the left. */
-      background-position: center, center, 0% 66%;
+        linear-gradient(90deg, rgba(5,7,14,.94) 0%, rgba(5,7,14,.72) 38%, rgba(5,7,14,.12) 72%),
+        linear-gradient(0deg, rgba(5,7,14,.92) 0%, transparent 38%),
+        url("./images/hero-bg.jpg");
+      background-size: cover, cover, auto 100%;
+      background-position: center, center, right center;
       background-repeat: no-repeat;
-      opacity: .96;
-    }
-    .hero > .wrap {
-      position: relative;
-      z-index: 1;
+      opacity: 1;
     }
     @media (max-width: 720px) {
       .hero::before {
         background-image:
-          linear-gradient(90deg, rgba(5,7,14,.9), rgba(5,7,14,.58)),
-          linear-gradient(0deg, rgba(5,7,14,.98) 0%, rgba(5,7,14,.18) 62%, rgba(5,7,14,.34) 100%),
-          url("./assets/robot-hero.webp");
-        background-size: cover, cover, auto 145%;
-        background-position: center, center, 0% 68%;
+          linear-gradient(90deg, rgba(5,7,14,.88), rgba(5,7,14,.5)),
+          linear-gradient(0deg, rgba(5,7,14,.96) 0%, transparent 60%),
+          url("./images/hero-bg.jpg");
+        background-size: cover, cover, auto 75%;
+        background-position: center, center, right bottom;
       }
     }
 
