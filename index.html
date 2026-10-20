@@ -1374,7 +1374,9 @@
         url("./assets/robot-hero.webp");
       /* The source is a portfolio screenshot: zoom and shift to show the robot, not its baked-in text/nav. */
       background-size: cover, cover, auto 170%;
-      background-position: center, center, 100% 66%;
+      /* Shift the oversized source left less so the robot head sits on the RIGHT,
+         leaving the introduction readable on the left. */
+      background-position: center, center, 74% 66%;
       background-repeat: no-repeat;
       opacity: .96;
     }
@@ -1389,7 +1391,7 @@
           linear-gradient(0deg, rgba(5,7,14,.98) 0%, rgba(5,7,14,.18) 62%, rgba(5,7,14,.34) 100%),
           url("./assets/robot-hero.webp");
         background-size: cover, cover, auto 145%;
-        background-position: center, center, 100% 68%;
+        background-position: center, center, 74% 68%;
       }
     }
 
