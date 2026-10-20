@@ -16,7 +16,7 @@
   <title>Eftiare Ahmed Rimon — Software Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       color-scheme: dark;
@@ -1014,6 +1014,101 @@
       .project .node { padding: 10px 4px; font-size: .62rem; }
       .project-copy > .tags span { font-size: .62rem; padding: 3px 7px; }
       .carousel-hint { flex-wrap: wrap; font-size: .68rem; }
+    }
+
+  
+    /* Typography pass inspired by the reference portfolio: rounded, clean, readable. */
+    body { font-family: "Outfit", sans-serif; font-size: 16px; letter-spacing: 0; }
+    h1, h2, h3, h4, .brand, .stat strong, .profile-card-footer strong {
+      font-family: "Outfit", sans-serif;
+      letter-spacing: -.045em;
+    }
+    .nav-links a, .btn, .project p, .about-main p, .experience-card, .contact-panel p {
+      font-family: "Outfit", sans-serif;
+    }
+    .hero > .wrap { width: min(1500px, calc(100% - 72px)); }
+    .hero-grid { grid-template-columns: minmax(0, 1.05fr) minmax(300px, .85fr); gap: clamp(34px, 6vw, 90px); }
+    h1 { font-family: "Outfit", sans-serif; font-size: clamp(3.65rem, 6.5vw, 6.7rem); line-height: .99; letter-spacing: -.055em; font-weight: 600; }
+    .hero-copy { font-size: clamp(1rem, 1.25vw, 1.12rem); line-height: 1.8; }
+    .section-head h2, #about .section-head h2, .contact-panel h2 {
+      font-family: "Outfit", sans-serif;
+      font-weight: 500;
+      letter-spacing: -.05em;
+    }
+    .brand { font-weight: 500; letter-spacing: -.035em; }
+    .nav-links a { font-size: .94rem; }
+    /* Keep the real portrait, remove the decorative frame and floating clutter. */
+    .hero-art {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 0;
+      padding: 0;
+      perspective: none;
+      isolation: isolate;
+      background: transparent;
+    }
+    .profile-halo, .profile-orbit, .profile-card-top, .profile-card-footer, .float-chip {
+      display: none !important;
+    }
+    .profile-card {
+      position: relative;
+      width: min(100%, 455px);
+      margin: 0 auto;
+      padding: 0;
+      overflow: hidden;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+      transform: none !important;
+      transition: none;
+      will-change: auto;
+    }
+    .profile-photo-frame {
+      display: block;
+      width: 100%;
+      min-height: 0;
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      border: 0;
+      border-radius: 22px;
+      background: transparent;
+      box-shadow: none;
+    }
+    .profile-photo {
+      display: block;
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center 26%;
+      border: 0;
+      border-radius: 22px;
+      background: transparent;
+      box-shadow: none;
+    }
+    .profile-photo-frame::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      pointer-events: none;
+      background: linear-gradient(180deg, transparent 70%, rgba(5,5,5,.12) 100%);
+    }
+    @media (max-width: 1000px) {
+      .hero-grid { grid-template-columns: minmax(0,1fr) minmax(270px,.82fr); gap: 28px; }
+      h1 { font-size: clamp(3.2rem, 6.2vw, 5.3rem); }
+      .profile-card { width: min(100%, 390px); }
+    }
+    @media (max-width: 720px) {
+      .hero > .wrap { width: calc(100% - 32px); }
+      .hero-grid { grid-template-columns: 1fr; gap: 30px; }
+      h1 { font-size: clamp(3.1rem, 12.2vw, 4.7rem); }
+      .hero-art { width: min(100%, 420px); margin-inline: auto; padding: 0; }
+      .profile-card { width: min(100%, 380px); }
+      .profile-photo-frame, .profile-photo { border-radius: 18px; }
     }
 
   </style>
