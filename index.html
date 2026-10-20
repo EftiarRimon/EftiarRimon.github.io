@@ -727,6 +727,13 @@
     .contact-panel .eyebrow { justify-content: center; color: #666; }
     .contact-panel .eyebrow::before { display: none; }
     .contact-panel h2 { color: #111; font-size: clamp(2.8rem, 5.8vw, 5.5rem); }
+    /* Keep the highlighted word readable on the light contact section. */
+    .contact-panel h2 .gradient-text {
+      background: linear-gradient(105deg, #354fa3 0%, #6848b8 52%, #147e9c 100%);
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
     .contact-panel p:not(.eyebrow) { max-width: 650px; margin: 20px auto 30px; color: #686868; }
     .contact-panel .button-row { justify-content: center; }
     .contact-panel .btn { color: #151515; border-color: rgba(0,0,0,.17); background: transparent; }
