@@ -79,8 +79,11 @@
     .menu-toggle { display: none; width: 42px; height: 42px; border: 1px solid var(--line); color: var(--ink); border-radius: 13px; background: var(--panel); cursor: pointer; }
     .menu-toggle span { display: block; width: 17px; height: 1.5px; margin: 4px auto; background: currentColor; }
 
-    .hero { position: relative; padding: 82px 0 70px; }
-    .hero-grid { display: grid; grid-template-columns: 1.03fr .97fr; align-items: center; gap: clamp(36px, 6vw, 82px); }
+    .hero { position: relative; isolation: isolate; padding: 82px 0 70px; min-height: calc(100svh - 76px); display: flex; align-items: center; background-image: linear-gradient(90deg, rgba(9,10,18,.98) 0%, rgba(9,10,18,.92) 25%, rgba(9,10,18,.70) 48%, rgba(9,10,18,.20) 78%, rgba(9,10,18,.28) 100%), linear-gradient(0deg, #090a12 0%, rgba(9,10,18,.08) 26%, rgba(9,10,18,.14) 100%), url('./assets/robot-hero.webp'); background-size: cover; background-position: center, center, right center; background-repeat: no-repeat; }
+    .hero-grid { display: block; width: 100%; }
+    .hero-content { max-width: 760px; }
+    .hero .stats { position: relative; z-index: 1; }
+    @media (min-width: 941px) { .hero-content h1 { max-width: 700px; } .hero .stats { max-width: 900px; } }
     .eyebrow { display: flex; align-items: center; gap: 10px; margin: 0 0 20px; color: var(--cyan); font: 500 .76rem "DM Mono", monospace; letter-spacing: .12em; text-transform: uppercase; }
     .eyebrow::before { content: ""; width: 25px; height: 1px; background: currentColor; opacity: .8; }
     .availability { display: inline-flex; align-items: center; gap: 9px; border: 1px solid rgba(143,228,179,.22); background: rgba(143,228,179,.06); color: #c4f1d5; border-radius: 999px; padding: 7px 12px; font-size: .82rem; }
@@ -243,7 +246,7 @@
       .js-motion .reveal { opacity: 1; transform: none; }
     }
     @media (max-width: 940px) {
-      .hero { padding-top: 62px; }
+      .hero { padding-top: 62px; min-height: auto; background-position: center, center, 62% center; }
       .hero-grid { grid-template-columns: 1fr; gap: 45px; }
       .hero-copy { max-width: 680px; }
       .hero-art { width: min(100%, 590px); margin-inline: auto; }
@@ -263,7 +266,7 @@
       .nav-links.is-open { display: flex; }
       .nav-links a { padding: 12px 13px; }
       .nav-links a.nav-cta { margin: 4px 0 0; text-align: center; }
-      .hero { padding: 50px 0 40px; }
+      .hero { padding: 50px 0 40px; background-image: linear-gradient(90deg, rgba(9,10,18,.95), rgba(9,10,18,.73)), linear-gradient(0deg, #090a12 0%, transparent 55%), url('./assets/robot-hero.webp'); background-position: center, center, 58% center; }
       h1 { font-size: clamp(2.75rem, 13vw, 4.5rem); }
       .hero-art { padding: 6px 0 15px; }
       .float-chip.top-chip { right: -4px; }
