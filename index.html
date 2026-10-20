@@ -1364,12 +1364,19 @@
     }
     .hero { background-image: none; }
     .hero::before {
+      inset: 0;
+      width: auto;
+      height: auto;
+      aspect-ratio: auto;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
       background-image:
         linear-gradient(90deg, rgba(5,7,14,.94) 0%, rgba(5,7,14,.72) 38%, rgba(5,7,14,.12) 72%),
         linear-gradient(0deg, rgba(5,7,14,.92) 0%, transparent 38%),
-        url("./hero-bg.jpg");
-      background-size: cover, cover, auto 100%;
-      background-position: center, center, right center;
+        url("./images/hero-bg.jpg");
+      background-size: cover, cover, auto 86%;
+      background-position: center, center, right bottom;
       background-repeat: no-repeat;
       opacity: 1;
     }
