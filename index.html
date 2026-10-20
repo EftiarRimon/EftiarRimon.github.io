@@ -801,6 +801,214 @@
       .cursor-glow, .cursor-dot, .cursor-ring { display: none; }
     }
 
+  
+    /* Compact portfolio gallery: full case studies open from each project card. */
+    .project-grid {
+      align-items: stretch;
+      gap: 24px;
+      padding: 4px 2px 22px;
+      scrollbar-width: none;
+    }
+    .project-grid::-webkit-scrollbar { display: none; }
+    .project {
+      position: relative;
+      display: block;
+      flex: 0 0 min(720px, 75vw);
+      height: clamp(320px, 25vw, 390px);
+      min-height: 0;
+      overflow: hidden;
+      padding: 0;
+      border-radius: 25px;
+      background: #151515;
+      isolation: isolate;
+      cursor: pointer;
+    }
+    .project:hover { background: #191919; transform: translateY(-3px); }
+    .project-featured, .project-tesla { display: block; }
+    .project-featured::after, .project-small .project-copy::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background: linear-gradient(180deg, rgba(0,0,0,.02) 8%, rgba(0,0,0,.08) 34%, rgba(0,0,0,.65) 67%, rgba(0,0,0,.94) 100%);
+    }
+    .project-featured .project-visual {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      min-height: 0;
+      padding: 0;
+      border: 0;
+      opacity: .92;
+      background: #111;
+    }
+    .project-featured .project-copy {
+      position: absolute;
+      z-index: 2;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+      padding: clamp(20px, 3vw, 32px);
+      background: transparent;
+    }
+    .project-small .project-copy {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-end;
+      gap: 8px;
+      padding: clamp(20px, 3vw, 32px);
+      background: transparent;
+    }
+    .project-small .project-copy::before { background: linear-gradient(180deg, rgba(0,0,0,.02) 0%, rgba(0,0,0,.08) 30%, rgba(0,0,0,.76) 67%, rgba(0,0,0,.96) 100%); }
+    .project-small .mini-preview {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      min-height: 0;
+      margin: 0;
+      padding: 24px;
+      overflow: hidden;
+      border: 0;
+      border-radius: 0;
+      opacity: .88;
+      background: radial-gradient(ellipse at 60% 25%, rgba(255,255,255,.13), transparent 60%), #111;
+    }
+    .project-small .project-copy > :not(.mini-preview) { position: relative; z-index: 2; }
+    .project .project-kicker {
+      margin: 0;
+      color: rgba(255,255,255,.78);
+      font-size: .68rem;
+      letter-spacing: .13em;
+    }
+    .project .project-kicker i { background: #f3f3f3; box-shadow: 0 0 10px rgba(255,255,255,.55); }
+    .project h3 {
+      max-width: 100%;
+      margin: 0;
+      color: #fff;
+      font: 600 clamp(1.3rem, 2.3vw, 2rem)/1.15 "Space Grotesk", sans-serif;
+      letter-spacing: -.04em;
+      text-wrap: balance;
+    }
+    .project-copy > p, .project-copy > .project-links, .project-copy > .project-meta,
+    .project-copy > .tags[aria-label="Project features"] { display: none !important; }
+    .project-copy > .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 4px 0 0;
+    }
+    .project-copy > .tags span {
+      padding: 4px 9px;
+      border-color: rgba(255,255,255,.2);
+      border-radius: 999px;
+      color: #eee;
+      background: rgba(15,15,15,.48);
+      backdrop-filter: blur(8px);
+      font-size: .69rem;
+    }
+    .project-copy > .tags span:nth-child(n+5) { display: none; }
+    .project-open {
+      position: absolute;
+      z-index: 5;
+      inset: 0;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-end;
+      padding: 18px;
+      color: #fff;
+      text-decoration: none;
+      border-radius: inherit;
+    }
+    .project-open span {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(255,255,255,.23);
+      border-radius: 50%;
+      background: rgba(20,20,20,.65);
+      backdrop-filter: blur(12px);
+      font-size: 1.15rem;
+      transition: transform .22s, background .22s;
+    }
+    .project:hover .project-open span, .project-open:focus-visible span {
+      transform: translate(2px,-2px);
+      background: rgba(255,255,255,.18);
+    }
+    .project-open:focus-visible { outline-offset: -5px; }
+    .project .architecture {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      padding: clamp(16px,3vw,30px);
+      border: 0;
+      border-radius: 0;
+      background: radial-gradient(ellipse at 60% 20%, rgba(255,255,255,.08), transparent 60%), #111;
+    }
+    .project .architecture-heading { margin-bottom: 16px; }
+    .project .architecture-heading h4 { color: #eee; font-size: .83rem; }
+    .project .architecture-heading span { font-size: .65rem; }
+    .project .architecture svg { width: 100%; max-height: 185px; }
+    .project .architecture-caption { margin: 10px 0 0; font-size: .65rem; }
+    .project .gallery {
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 8px;
+      width: 100%;
+      height: 100%;
+      padding: 13px;
+      background: #111;
+    }
+    .project .gallery figure { min-width: 0; height: 100%; margin: 0; overflow: hidden; border: 1px solid rgba(255,255,255,.12); border-radius: 12px; background: #171717; }
+    .project .gallery figure img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+    .project .gallery-note { position: absolute; right: 12px; bottom: 12px; margin: 0; padding: 4px 8px; border-radius: 99px; color: #ddd; background: rgba(0,0,0,.72); font-size: .6rem; }
+    .project .mini-window { width: min(100%, 500px); transform: rotate(-2deg); border-color: rgba(255,255,255,.18); background: rgba(20,20,20,.92); box-shadow: 0 25px 70px rgba(0,0,0,.3); }
+    .project .mini-window-top { color: #aaa; }
+    .project .mini-line { background: linear-gradient(90deg,rgba(255,255,255,.65),rgba(255,255,255,.12)); }
+    .project .mini-columns span { background: linear-gradient(145deg,#292929,#111); border-color: rgba(255,255,255,.14); }
+    .project .nodes { width: 100%; gap: 9px; }
+    .project .node { min-width: 0; flex: 1; padding: 14px 8px; border-color: rgba(255,255,255,.2); color: #f1f1f1; background: rgba(25,25,25,.82); font-size: .78rem; }
+    .project .node-arrow { color: #ccc; }
+    .carousel-hint { display: flex; align-items: center; gap: 8px; }
+    .carousel-hint::after { content: "Each card opens a full project case study"; color: #666; font-family: "DM Sans",sans-serif; letter-spacing: 0; }
+    @media (max-width: 1000px) {
+      .project { flex-basis: min(640px, 82vw); height: 350px; }
+      .project-featured .project-copy, .project-small .project-copy { padding: 24px; }
+    }
+    @media (max-width: 720px) {
+      .project-grid { gap: 14px; margin-right: -14px; padding-right: 14px; }
+      .project { flex-basis: min(460px, 86vw); height: 330px; border-radius: 20px; }
+      .project-open { padding: 12px; }
+      .project-open span { width: 36px; height: 36px; }
+      .project-featured .project-copy, .project-small .project-copy { padding: 18px; gap: 7px; }
+      .project .gallery { gap: 5px; padding: 7px; }
+      .project .architecture { padding: 12px; }
+      .project .architecture-heading { margin-bottom: 8px; }
+      .project .architecture svg { max-height: 150px; }
+      .project .architecture-caption { font-size: .56rem; }
+      .project .node { padding: 10px 4px; font-size: .62rem; }
+      .project-copy > .tags span { font-size: .62rem; padding: 3px 7px; }
+      .carousel-hint { flex-wrap: wrap; font-size: .68rem; }
+    }
+
   </style>
 </head>
 <body>
@@ -875,7 +1083,8 @@
           <button class="filter" type="button" data-filter="ai" aria-pressed="false">AI / ML</button>
         </div>
         <div class="project-grid">
-          <article class="project project-featured reveal" data-category="systems">
+          <article class="project project-featured reveal" data-category="systems" data-project-id="rate-limiter">
+            <a class="project-open" href="./project.html?project=rate-limiter" aria-label="Open case study: Rate Limiter &amp; Load Balancer"><span aria-hidden="true">↗</span></a>
             <div class="project-copy">
               
               <div class="project-kicker"><i></i> Systems engineering · 01</div>
@@ -918,7 +1127,8 @@
           
           </article>
 
-          <article class="project project-featured project-tesla reveal" data-category="web">
+          <article class="project project-featured project-tesla reveal" data-category="web" data-project-id="dhaka-tesla-pool">
+            <a class="project-open" href="./project.html?project=dhaka-tesla-pool" aria-label="Open case study: Dhaka Tesla Pool"><span aria-hidden="true">↗</span></a>
             <div class="project-copy">
               <div class="project-kicker"><i></i> Full-stack product · 02</div>
               <h3>Dhaka Tesla Pool</h3>
@@ -939,7 +1149,8 @@
             </div>
           </article>
 
-          <article class="project project-small reveal" data-category="web">
+          <article class="project project-small reveal" data-category="web" data-project-id="mit-student-portal">
+            <a class="project-open" href="./project.html?project=mit-student-portal" aria-label="Open case study: MIT Student Portal"><span aria-hidden="true">↗</span></a>
             <div class="project-copy">
               <div class="mini-preview" aria-hidden="true"><div class="mini-window"><div class="mini-window-top"><i></i><i></i><i></i><span style="margin-left:5px">student-portal / overview</span></div><div class="mini-line wide"></div><div class="mini-line medium"></div><div class="mini-columns"><span></span><span></span><span></span></div><div class="mini-line short"></div></div></div>
               <div class="project-kicker"><i></i> Web application · 03</div>
@@ -952,7 +1163,8 @@
             </div>
           </article>
 
-          <article class="project project-small reveal" data-category="systems web">
+          <article class="project project-small reveal" data-category="systems web" data-project-id="monolith-to-distributed">
+            <a class="project-open" href="./project.html?project=monolith-to-distributed" aria-label="Open case study: Monolith to Distributed"><span aria-hidden="true">↗</span></a>
             <div class="project-copy">
               <div class="mini-preview" aria-hidden="true"><div class="nodes"><div class="node">Monolith</div><span class="node-arrow">→</span><div class="node">Services</div><span class="node-arrow">→</span><div class="node">Scale</div></div></div>
               <div class="project-kicker"><i></i> Architecture · 04</div>
@@ -965,7 +1177,8 @@
             </div>
           </article>
 
-          <article class="project project-small reveal" data-category="ai">
+          <article class="project project-small reveal" data-category="ai" data-project-id="text2code">
+            <a class="project-open" href="./project.html?project=text2code" aria-label="Open case study: Text2Code"><span aria-hidden="true">↗</span></a>
             <div class="project-copy">
               <div class="mini-preview" aria-hidden="true"><div class="nodes"><div class="node">Text input</div><span class="node-arrow">→</span><div class="node">RNN / LSTM</div><span class="node-arrow">→</span><div class="node">Python code</div></div></div>
               <div class="project-kicker"><i></i> Applied machine learning · 05</div>
