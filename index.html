@@ -9,10 +9,11 @@
   <meta property="og:description" content="Backend-focused software engineering: APIs, databases, Docker, system design, and full-stack products.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://eftiarrimon.github.io/">
-  <meta property="og:image" content="https://raw.githubusercontent.com/EftiarRimon/EftiarRimon/main/profile.png">
+  <meta property="og:image" content="https://eftiarrimon.github.io/hero-bg.jpg">
   <meta property="og:image:alt" content="Portrait of Eftiare Ahmed Rimon">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://eftiarrimon.github.io/">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
   <title>Eftiare Ahmed Rimon — Software Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1391,6 +1392,17 @@
       }
     }
 
+      @media (min-width: 721px) { .menu-toggle { display: none; } }
+    #about .wrap { display: grid; grid-template-columns: minmax(0,1fr) 320px; column-gap: 56px; }
+    #about .section-head { grid-column: 1 / -1; }
+    #about .about-grid { grid-column: 1; grid-row: 2; }
+    #about .about-portrait { grid-column: 2; grid-row: 2; margin: 0; width: 100%; align-self: start; }
+    #about .about-portrait .profile-card { width: 100%; }
+    @media (max-width: 900px) {
+      #about .wrap { display: block; }
+      #about .about-portrait { margin: 30px auto 0; width: min(100%, 280px); }
+    }
+
   </style>
 </head>
 <body>
@@ -1433,10 +1445,10 @@
           </div>
           
         </div>
-        <div class="stats reveal" aria-label="Verified experience metrics">
+        <div class="stats reveal" aria-label="Key metrics">
           <div class="stat"><strong>3</strong><span>Production features shipped</span></div>
           <div class="stat"><strong>5</strong><span>Production bugs fixed</span></div>
-          <div class="stat"><strong>200+</strong><span>Portal users supported</span></div>
+          <div class="stat"><strong>200+</strong><span>Student portal users</span></div>
         </div>
       </div>
     </section>
@@ -1459,9 +1471,9 @@
               <h3>Rate Limiter &amp; Load Balancer</h3>
               <p>A containerized, fault-tolerant system combining rate limiting, load balancing, object storage, and persistence to protect services under load.</p>
               <p class="project-result"><strong>Key result:</strong> Combines request throttling and traffic distribution with MySQL persistence and MinIO object storage.</p>
-              <p class="project-learning"><strong>What I learned / would improve:</strong> What I learned / would improve: Rate limits need explicit policies and predictable overload behavior; I would add load tests and failure-injection tests before making resilience claims.</p>
+              <p class="project-learning"><strong>What I learned / would improve:</strong> Rate limits need explicit policies and predictable overload behavior; I would add load tests and failure-injection tests before making resilience claims.</p>
               <div class="tags"><span>Node.js</span><span>Docker</span><span>MinIO</span><span>MySQL</span></div>
-              <div class="project-meta"><span>Role · Systems engineer</span><span class="project-meta-note">Source repository link is not available in the current project details.</span></div>
+              <div class="project-meta"><span>Role · Systems engineer</span></div>
             </div>
             <div class="project-visual">
               <div class="architecture" aria-labelledby="rate-architecture-heading">
@@ -1502,7 +1514,7 @@
               <h3>Dhaka Tesla Pool</h3>
               <p><b>The problem:</b> Help Tesla owners share spare seats and let passengers split daily commute fares. <b>The solution:</b> A bilingual ride-sharing flow with separate passenger and driver journeys.</p>
               <p class="project-result"><strong>Key result:</strong> Provides separate passenger and driver journeys with seat booking and fare splitting in a bilingual interface.</p>
-              <p class="project-learning"><strong>What I learned / would improve:</strong> What I learned / would improve: Booking flows need clear state transitions and consistent seat availability; I would add concurrency tests and broader end-to-end coverage.</p>
+              <p class="project-learning"><strong>What I learned / would improve:</strong> Booking flows need clear state transitions and consistent seat availability; I would add concurrency tests and broader end-to-end coverage.</p>
               <div class="tags"><span>Next.js</span><span>Node.js</span><span>MySQL</span><span>Role-based auth</span><span>Vercel</span></div>
               <div class="project-links"><a class="btn btn-primary" href="https://dhaka-tesla-pool-jade.vercel.app" target="_blank" rel="noopener noreferrer">Live demo ↗</a><a class="btn" href="https://github.com/EftiarRimon/dhaka-tesla-pool" target="_blank" rel="noopener noreferrer">Source code ↗</a></div>
               <div class="tags" aria-label="Project features"><span>Seat booking</span><span>Fare splitting</span><span>Bangla + English</span><span>Passenger + driver flows</span></div>
@@ -1525,7 +1537,7 @@
               <h3>MIT Student Portal</h3>
               <p>A role-based university portal for 200+ users, bringing courses, enrollment, payments, and results into one workflow.</p>
               <p class="project-result"><strong>Key result:</strong> Serves 200+ users through a shared workflow for courses, enrollment, payments, and results.</p>
-              <p class="project-learning"><strong>What I learned / would improve:</strong> What I learned / would improve: Role-based access needs server-side checks at each workflow boundary; I would strengthen automated integration tests for enrollment and payments.</p>
+              <p class="project-learning"><strong>What I learned / would improve:</strong> Role-based access needs server-side checks at each workflow boundary; I would strengthen automated integration tests for enrollment and payments.</p>
               <div class="tags"><span>Next.js</span><span>Node.js</span><span>Prisma</span><span>MySQL</span><span>JWT</span></div>
               <div class="project-meta"><span>Role · Solo developer</span><a href="https://github.com/EftiarRimon/MIT-PORTAL" target="_blank" rel="noopener noreferrer">Repository ↗</a></div>
             </div>
@@ -1539,7 +1551,7 @@
               <h3>Monolith to Distributed</h3>
               <p>Explored the trade-offs of scaling a Stack Overflow-style Q&amp;A platform by building a monolith and then migrating toward distributed services as a team.</p>
               <p class="project-result"><strong>Key result:</strong> Explores a migration path from a monolithic Q&amp;A application toward distributed services.</p>
-              <p class="project-learning"><strong>What I learned / would improve:</strong> What I learned / would improve: Distributed services add deployment and observability overhead; I would validate each service boundary with load tests and failure scenarios before splitting further.</p>
+              <p class="project-learning"><strong>What I learned / would improve:</strong> Distributed services add deployment and observability overhead; I would validate each service boundary with load tests and failure scenarios before splitting further.</p>
               <div class="tags"><span>JavaScript</span><span>Node.js</span><span>Express</span><span>Distributed systems</span></div>
               <div class="project-meta"><span>Role · Team engineer</span><a href="https://github.com/EftiarRimon/stackoverflow" target="_blank" rel="noopener noreferrer" aria-label="View source code for Monolith to Distributed on GitHub">Source code ↗</a></div>
             </div>
@@ -1553,7 +1565,7 @@
               <h3>Text2Code</h3>
               <p>A comparative sequence-to-sequence study converting natural-language descriptions into Python code, using attention-based recurrent models.</p>
               <p class="project-result"><strong>Key result:</strong> Compares attention-based recurrent sequence-to-sequence models for natural-language-to-Python code generation.</p>
-              <p class="project-learning"><strong>What I learned / would improve:</strong> What I learned / would improve: Exact-match scores alone do not show whether generated code works; I would add syntax checks and execution-based evaluation.</p>
+              <p class="project-learning"><strong>What I learned / would improve:</strong> Exact-match scores alone do not show whether generated code works; I would add syntax checks and execution-based evaluation.</p>
               <div class="tags"><span>Python</span><span>PyTorch</span><span>RNN</span><span>LSTM</span><span>BiLSTM</span><span>Bahdanau attention</span></div>
               <div class="project-meta"><span>Role · ML researcher</span><a href="https://github.com/EftiarRimon/Text2Code-Seq2Seq" target="_blank" rel="noopener noreferrer">Repository ↗</a></div>
             </div>
@@ -1603,7 +1615,7 @@
       <div class="wrap">
         <div class="section-head reveal"><div><p class="eyebrow">Professional experience</p><h2 id="experience-title">Professional experience.</h2></div><p class="section-intro">Experience delivering changes on a financial-services platform used by real business teams.</p></div>
         <article class="glass-card experience-card reveal">
-          <div class="experience-side"><span class="company-mark">LC</span><span>Software development</span></div>
+          <div class="experience-side"><span class="company-mark">LC</span><span>Mar – Aug 2025<br>Software development</span></div>
           <div class="experience-content">
             <h3>Software Development Intern</h3>
             <p class="company">CAPITA (Capital Market Solution) · LEADS Corporation Limited</p>
@@ -1623,7 +1635,7 @@
       <div class="wrap">
         <div class="section-head reveal"><div><p class="eyebrow">Core skills</p><h2 id="skills-title">Backend-first, full-stack capable.</h2></div><p class="section-intro">APIs, databases, containerized services, and product interfaces.</p></div>
         <div class="skills-row reveal" aria-label="Core technical skills">
-          <span>Node.js</span><span>Express</span><span>Java</span><span>REST APIs</span><span>JWT</span><span>MySQL</span><span>Prisma</span><span>Oracle DB</span><span>PL/SQL</span><span>Docker</span><span>MinIO</span><span>Next.js</span><span>React</span><span>Python</span><span>PyTorch</span>
+          <span>Node.js</span><span>Express</span><span>Java</span><span>REST APIs</span><span>JWT</span><span>MySQL</span><span>Prisma</span><span>Oracle DB</span><span>PL/SQL</span><span>Docker</span><span>MinIO</span><span>Next.js</span><span>React</span><span>Python</span><span>PyTorch</span><span>TypeScript</span><span>PostgreSQL</span><span>MongoDB</span><span>Git</span>
         </div>
       </div>
     </section>
