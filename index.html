@@ -1403,6 +1403,22 @@
       #about .about-portrait { margin: 30px auto 0; width: min(100%, 280px); }
     }
 
+      .edu-feature { display: grid; grid-template-columns: 210px minmax(0,1fr); gap: 34px; align-items: center; padding: clamp(24px,3.5vw,40px); border: 1px solid rgba(255,255,255,.18); border-radius: 26px; background: linear-gradient(135deg, rgba(255,255,255,.08), rgba(255,255,255,.02)); }
+    .logo-tile { display: grid; place-items: center; padding: 22px; border-radius: 20px; background: #fff; }
+    .logo-tile img { display: block; width: 100%; height: auto; max-height: 110px; object-fit: contain; }
+    .edu-label { margin: 0 0 8px; color: #bdbdbd; font: 500 .74rem "DM Mono", monospace; letter-spacing: .14em; text-transform: uppercase; }
+    .edu-body h3 { margin: 0 0 8px; color: #fff; font-size: clamp(1.7rem,3.2vw,2.5rem); line-height: 1.15; }
+    .edu-school { margin: 0; color: #d8d8d8; font-size: 1.12rem; }
+    .edu-chips { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 22px; }
+    .edu-chips span { padding: 8px 14px; border: 1px solid rgba(255,255,255,.18); border-radius: 999px; color: #e2e2e2; background: rgba(255,255,255,.05); font-size: .88rem; }
+    .company-logo { display: grid; place-items: center; width: 150px; padding: 12px 14px; margin-bottom: 15px; border-radius: 14px; background: #fff; }
+    .company-logo img { display: block; width: 100%; height: auto; }
+    @media (max-width: 720px) {
+      .edu-feature { grid-template-columns: 1fr; gap: 22px; }
+      .logo-tile { max-width: 210px; }
+      .company-logo { width: 120px; margin-bottom: 0; }
+    }
+
   </style>
 </head>
 <body>
@@ -1615,7 +1631,7 @@
       <div class="wrap">
         <div class="section-head reveal"><div><p class="eyebrow">Professional experience</p><h2 id="experience-title">Professional experience.</h2></div><p class="section-intro">Experience delivering changes on a financial-services platform used by real business teams.</p></div>
         <article class="glass-card experience-card reveal">
-          <div class="experience-side"><span class="company-mark">LC</span><span>Mar – Aug 2025<br>Software development</span></div>
+          <div class="experience-side"><span class="company-logo"><img src="./leads-logo.png" alt="LEADS Corporation Limited logo" width="130" height="32"></span><span>Mar – Aug 2025<br>Software development</span></div>
           <div class="experience-content">
             <h3>Software Development Intern</h3>
             <p class="company">CAPITA (Capital Market Solution) · LEADS Corporation Limited</p>
@@ -1641,12 +1657,19 @@
     </section>
 
     <section class="section" id="education" aria-labelledby="education-title">
-      <div class="wrap">
-        <div class="section-head reveal"><div><p class="eyebrow">Education</p><h2 id="education-title">Education &amp; beyond.</h2></div></div>
-        <div class="education-grid"><article class="glass-card education-card reveal"><span class="edu-icon" aria-hidden="true">⌂</span><div><h3>Institute of Information Technology</h3><p>University of Dhaka</p><p class="sub">Software engineering graduate</p></div></article></div>
-        <p class="education-note">Outside software: IIT futsal and cricket tournament champion; helped organize the IIT Tour for 300+ attendees.</p>
+  <div class="wrap">
+    <div class="section-head reveal"><div><p class="eyebrow">Education</p><h2 id="education-title">Education &amp; beyond.</h2></div></div>
+    <article class="edu-feature reveal">
+      <div class="logo-tile"><img src="./iit-du-logo.png" alt="Institute of Information Technology, University of Dhaka logo" width="180" height="99"></div>
+      <div class="edu-body">
+        <p class="edu-label">Bachelor's degree</p>
+        <h3>B.Sc. in Software Engineering</h3>
+        <p class="edu-school">Institute of Information Technology (IIT), University of Dhaka</p>
+        <div class="edu-chips"><span>IIT futsal champion</span><span>IIT cricket tournament champion</span><span>Organized IIT Tour · 300+ attendees</span></div>
       </div>
-    </section>
+    </article>
+  </div>
+</section>
 
     <section class="contact-section" id="contact" aria-labelledby="contact-title">
       <div class="wrap">
